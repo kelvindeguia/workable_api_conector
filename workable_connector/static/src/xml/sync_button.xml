@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="workable_connector.WorkableListView" t-inherit="web.ListView" t-inherit-mode="primary">
+        <xpath expr="//t[@t-set-slot='control-panel-always-buttons']" position="replace">
+            <t t-set-slot="control-panel-always-buttons">
+                <button class="btn btn-primary" t-on-click="onSyncFromWorkable">
+                    <i class="fa fa-refresh me-1"/> Sync Hiring Plan
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

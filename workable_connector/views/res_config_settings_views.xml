@@ -1,0 +1,26 @@
+<odoo>
+    <record id="res_config_settings_view_workable" model="ir.ui.view">
+        <field name="name">res.config.settings.view.workable</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='about']" position="after">
+                <div class="app_settings_block">
+                    <h2>Workable Integration</h2>
+                    <div class="row mt16">
+                        <div class="col-12 col-lg-6">
+                            <div class="mt16">
+                                <label for="workable_subdomain" string="Workable Subdomain"/>
+                                <field name="workable_subdomain" placeholder="mycompany"/>
+                            </div>
+                            <div class="mt16">
+                                <label for="workable_api_token" string="API Token"/>
+                                <field name="workable_api_token" password="True"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

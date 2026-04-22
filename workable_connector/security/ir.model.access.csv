@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workable_hiring_plan_user,workable.hiring.plan.user,model_workable_hiring_plan,group_workable_ats_user,1,1,1,0
+access_workable_hiring_plan_manager,workable.hiring.plan.manager,model_workable_hiring_plan,group_workable_ats_manager,1,1,1,1

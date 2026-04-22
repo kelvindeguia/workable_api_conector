@@ -1,0 +1,145 @@
+<odoo>
+    <record id="action_workable_employees" model="ir.actions.act_window">
+        <field name="name">Workable Employees</field>
+        <field name="res_model">workable.employees</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No employees found. Click the button below to sync from Workable.
+            </p>
+        </field>
+    </record>
+
+    <record id="view_workable_employees_list" model="ir.ui.view">
+        <field name="name">workable.employees.list</field>
+        <field name="model">workable.employees</field>
+        <field name="arch" type="xml">
+            <list string="Employees" js_class="workable_list">
+                <field name="employee_id"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="preferred_name"/>
+                <field name="job_title"/>
+                <field name="department"/>
+                <field name="state"/>
+                <field name="work_email"/>
+                <field name="start_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_workable_employees_form" model="ir.ui.view">
+        <field name="name">workable.employees.form</field>
+        <field name="model">workable.employees</field>
+        <field name="arch" type="xml">
+            <form string="Employee">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,inactive,published"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="employee_id" placeholder="Employee ID"/>
+                        </h1>
+                        <h2>
+                            <field name="first_name" placeholder="First Name"/>
+                            <field name="middle_name" placeholder="Middle Name"/>
+                            <field name="last_name" placeholder="Last Name"/>
+                        </h2>
+                        <h3>
+                            <field name="preferred_name" placeholder="Preferred Name"/>
+                        </h3>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <group string="Personal Information">
+                        <group>
+                            <field name="birthdate"/>
+                            <field name="gender"/>
+                            <field name="marital_status"/>
+                            <field name="country"/>
+                            <field name="address"/>
+                        </group>
+                        <group>
+                            <field name="certificate_url" widget="url"/>
+                            <field name="social_media"/>
+                            <field name="chat_video_communication"/>
+                        </group>
+                    </group>
+
+                    <!-- Contact Information -->
+                    <group string="Contact Information">
+                        <group>
+                            <field name="phone_type"/>
+                            <field name="phone"/>
+                            <field name="extension"/>
+                        </group>
+                        <group>
+                            <field name="work_email" widget="email"/>
+                            <field name="personal_email" widget="email"/>
+                        </group>
+                    </group>
+
+                    <!-- Employment Information -->
+                    <group string="Employment Information">
+                        <group>
+                            <field name="job_title"/>
+                            <field name="department"/>
+                            <field name="division"/>
+                            <field name="manager"/>
+                            <field name="entity"/>
+                        </group>
+                        <group>
+                            <field name="employment_type"/>
+                            <field name="workplace"/>
+                            <field name="work_schedule"/>
+                            <field name="hire_date"/>
+                            <field name="start_date"/>
+                            <field name="effective_date"/>
+                            <field name="work_effective_date"/>
+                            <field name="expiry_date"/>
+                        </group>
+                    </group>
+
+                    <!-- Compensation -->
+                    <group string="Compensation">
+                        <group>
+                            <field name="pay_type"/>
+                            <field name="amount"/>
+                            <field name="currency"/>
+                            <field name="frequency"/>
+                        </group>
+                        <group>
+                            <field name="pay_schedule"/>
+                            <field name="overtime_status"/>
+                        </group>
+                    </group>
+
+                    <!-- Notes -->
+                    <group string="Notes">
+                        <group colspan="2">
+                            <field name="note" placeholder="Additional notes..."/>
+                        </group>
+                        <group colspan="2">
+                            <field name="reason" placeholder="Reason..."/>
+                        </group>
+                        <group colspan="2">
+                            <field name="overtime_note" placeholder="Overtime notes..."/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Admin Fields" groups="base.group_system">
+                            <group>
+                                <field name="workable_employee_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+</odoo>
