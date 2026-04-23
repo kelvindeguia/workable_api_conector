@@ -4,6 +4,7 @@
     'version': '18.0.0.0.0',
     'category': 'Workable/Connector',
     'summary': 'API Integration with Workable for Odoo',
+    'icon': 'static/description/workable_icon.png',
     'description': """
         Workable ATS API Integration for Odoo
     """,
@@ -20,8 +21,8 @@
         'security/ir.model.access.csv',
         # Views
         'views/hiring_plan_views.xml',
-        'views/menuitems.xml',
         'views/res_config_settings_views.xml',
+        'views/menuitems.xml',
     ],
     'assets': {
         'web.assets_backend': [
