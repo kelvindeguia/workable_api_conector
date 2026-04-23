@@ -1,7 +1,8 @@
 <odoo>
     <!-- Menu Items -->
     <menuitem id = "workable_menu_root"
-        name = "Workable Connector" 
+        name = "Workable Connector"
+        web_icon="workable_connector,static/description/icon.png"
         sequence = "10"/>
     
         <menuitem id = "workable_ats_menu_hiring_plan" 
@@ -9,4 +10,16 @@
             parent = "workable_menu_root" 
             action = "action_workable_hiring_plan"
             sequence = "1"/>
+    
+        <menuitem id = "workable_configuration_menu" 
+            name = "Configuration" 
+            parent = "workable_menu_root" 
+            sequence = "10"/>
+
+            <menuitem id="menu_workable_global_settings"
+                name="Settings"
+                parent="workable_configuration_menu"
+                sequence="1"
+                action="action_workable_configuration"
+                groups="base.group_system"/>
 </odoo>
