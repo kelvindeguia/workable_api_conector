@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workable_department_user,workable.department user,model_workable_department,group_workable_ats_user,1,0,0,0
+access_workable_department_manager,workable.department manager,model_workable_department,group_workable_ats_manager,1,1,1,1

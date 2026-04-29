@@ -1,0 +1,145 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_workable_job" model="ir.actions.act_window">
+        <field name="name">Workable Jobs</field>
+        <field name="res_model">workable.job</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No jobs found. Click the Sync Jobs button to fetch records from Workable.
+            </p>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_workable_job_list" model="ir.ui.view">
+        <field name="name">workable.job.list</field>
+        <field name="model">workable.job</field>
+        <field name="arch" type="xml">
+            <list string="Workable Jobs" js_class="workable_list_jobs">
+                <field name="job_id"/>
+                <field name="title"/>
+                <field name="full_title"/>
+                <field name="state"/>
+                <field name="workplace_type"/>
+                <!-- <field name="location_str"/> -->
+                <field name="department_id"/>
+                <!-- <field name="salary_currency"/> -->
+                <field name="updated_at"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_workable_job_form" model="ir.ui.view">
+        <field name="name">workable.job.form</field>
+        <field name="model">workable.job</field>
+        <field name="arch" type="xml">
+            <form string="Workable Job">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,published,closed,archived"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="job_id" placeholder="Job ID"/>
+                        </h1>
+                        <h2>
+                            <field name="title" placeholder="Job Title"/>
+                        </h2>
+                        <h3>
+                            <field name="full_title" placeholder="Full Title"/>
+                        </h3>
+                    </div>
+
+                    <group string="Core Information">
+                        <group>
+                            <field name="workable_job_id" readonly="1"/>
+                            <!-- <field name="workable_shortcode" readonly="1"/> -->
+                            <field name="code"/>
+                            <field name="state"/>
+                            <!-- <field name="sample"/> -->
+                            <field name="confidential"/>
+                        </group>
+                        <group>
+                            <field name="workplace_type"/>
+                            <!-- <field name="salary_currency"/> -->
+                            <field name="keywords"/>
+                            <field name="created_at" readonly="1"/>
+                            <field name="updated_at" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group string="Department">
+                        <group>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="department_hierarchy_id" nolabel="1" placeholder="Department hierarchy"/>
+                        </group>
+                    </group>
+
+                    <group string="URLs">
+                        <group>
+                            <field name="url" widget="url"/>
+                            <field name="application_url" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="shortlink" widget="url"/>
+                        </group>
+                    </group>
+
+                    <!-- <group string="Location">
+                        <group>
+                            <field name="job_location"/>
+                            <field name="location_str"/>
+                            <field name="location_country"/>
+                            <field name="location_country_code"/>
+                            <field name="location_region"/>
+                            <field name="location_region_code"/>
+                        </group>
+                        <group>
+                            <field name="location_city"/>
+                            <field name="location_zip_code"/>
+                            <field name="telecommuting"/>
+                        </group>
+                    </group> -->
+
+                    <notebook>
+                        <page string="Descriptions">
+                            <group>
+                                <!-- <field name="description" widget="html" nolabel="1"/> -->
+                            </group>
+                        </page>
+
+                        <page string="Full Description">
+                            <group>
+                                <!-- <field name="full_description_html" widget="html" nolabel="1"/> -->
+                            </group>
+                        </page>
+
+                        <!-- <page string="Requirements">
+                            <group>
+                                <field name="requirements" widget="html" nolabel="1"/>
+                            </group>
+                        </page> -->
+
+                        <!-- <page string="Benefits">
+                            <group>
+                                <field name="benefits" widget="html" nolabel="1"/>
+                            </group>
+                        </page> -->
+
+                        <!-- <page string="Sync Audit" groups="base.group_system">
+                            <group>
+                                <field name="last_sync_at" readonly="1"/>
+                                <field name="sync_note" readonly="1"/>
+                            </group>
+                        </page> -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

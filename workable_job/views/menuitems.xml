@@ -1,0 +1,12 @@
+<odoo>
+    <!-- Menu Items -->
+    <menuitem id = "workable_jobs_menu_root"
+        name = "Workable Job" 
+        sequence = "10"/>
+    
+        <menuitem id = "workable_jobs_menu_jobs" 
+            name = "Jobs" 
+            parent = "workable_connector.workable_menu_root" 
+            action = "action_workable_job"
+            sequence = "2"/>
+</odoo>

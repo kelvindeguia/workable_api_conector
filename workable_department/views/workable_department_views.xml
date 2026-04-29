@@ -1,0 +1,47 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_workable_department" model="ir.actions.act_window">
+        <field name="name">Workable Departments</field>
+        <field name="res_model">workable.department</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No department found. Click the Sync Departments button to fetch records from Workable.
+            </p>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_workable_department_list" model="ir.ui.view">
+        <field name="name">workable.department.list</field>
+        <field name="model">workable.department</field>
+        <field name="arch" type="xml">
+            <list string="Workable Departments" js_class="workable_list_department">
+                <field name="department_id"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="sample"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_workable_department_form" model="ir.ui.view">
+        <field name="name">workable.department.form</field>
+        <field name="model">workable.department</field>
+        <field name="arch" type="xml">
+            <form string="Workable Department">
+                <sheet>
+                    <group string="Core Information">
+                        <group>
+                            <field name="department_id" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                            <field name="parent_id" readonly="1"/>
+                            <field name="sample"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
