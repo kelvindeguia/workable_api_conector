@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workable_jobs_user,workable.jobs user,model_workable_job,group_workable_ats_user,1,0,0,0
+access_workable_jobs_manager,workable.jobs manager,model_workable_job,group_workable_ats_manager,1,1,1,1
