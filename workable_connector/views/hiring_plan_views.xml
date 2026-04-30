@@ -46,130 +46,221 @@
                         </h2>
                     </div>
 
-                    <!-- Basic Information -->
-                    <group string="Basic Information">
-                        <group>
-                            <field name="department"/>
-                            <field name="requisition_location"/>
-                            <field name="hiring_manager"/>
-                            <field name="requisition_owner"/>
-                            <field name="reason"/>
-                            <field name="employment_type"/>
-                        </group>
-                        <group>
-                            <field name="experience"/>
-                            <field name="plan_date"/>
-                            <field name="created_on"/>
-                            <field name="sourcing_date"/>
-                            <field name="calibration_date"/>
-                            <field name="target_start_date"/>
-                        </group>
-                    </group>
-
-                    <!-- Client & Classification -->
-                    <group string="Client &amp; Classification">
-                        <group>
-                            <field name="company"/>
-                            <field name="client_business_category"/>
-                            <field name="career_level"/>
-                            <field name="client_classification"/>
-                            <field name="job_classification"/>
-                            <field name="position_classification"/>
-                        </group>
-                        <group>
-                            <field name="industry"/>
-                            <field name="client_website" widget="url"/>
-                        </group>
-                    </group>
-
-                    <!-- Headcount & Vacancy -->
-                    <group string="Headcount &amp; Vacancy">
-                        <group>
-                            <field name="headcount_demand"/>
-                            <field name="headcount"/>
-                            <field name="remaining_vacancy"/>
-                        </group>
-                        <group>
-                            <field name="requisition_age"/>
-                            <field name="candidate"/>
-                            <field name="approved_by"/>
-                        </group>
-                    </group>
-
-                    <!-- Salary Range -->
-                    <group string="Salary Range">
-                        <group>
-                            <field name="salary_from"/>
-                            <field name="salary_to"/>
-                        </group>
-                        <group>
-                            <field name="salary_currency"/>
-                            <field name="salary_frequency"/>
-                        </group>
-                    </group>
-
-                    <!-- Salary Package & Compensation -->
-                    <group string="Salary Package &amp; Compensation">
-                        <group>
-                            <field name="salary_package"/>
-                            <field name="salary_package_currency"/>
-                            <field name="salary_package_frequency"/>
-                            <field name="allowances"/>
-                            <field name="bonuses"/>
-                        </group>
-                        <group>
-                            <field name="incentives"/>
-                            <field name="life_insurance"/>
-                            <field name="night_differential"/>
-                        </group>
-                        <group colspan="2">
-                            <field name="salary_package_remarks"
-                                placeholder="Additional notes on the salary package..."
-                                colspan="2"/>
-                        </group>
-                    </group>
-
-                    <!-- Internal Contacts -->
-                    <group string="Internal Contacts">
-                        <group>
-                            <field name="department_head"/>
-                            <field name="requestor"/>
-                            <field name="sales_lead"/>
-                        </group>
-                        <group>
-                            <field name="secondary_hiring_manager_poc"/>
-                        </group>
-                    </group>
-
-                    <!-- Client Hiring Manager Contacts -->
-                    <group string="Client Hiring Manager Contacts">
-                        <group>
-                            <field name="hiring_manager_client"/>
-                            <field name="hiring_manager_email_client" widget="email"/>
-                        </group>
-                        <group>
-                            <field name="hiring_manager_client_2"/>
-                            <field name="hiring_manager_email_client_2" widget="email"/>
-                        </group>
-                        <group>
-                            <field name="hiring_manager_client_3"/>
-                            <field name="hiring_manager_email_client_3" widget="email"/>
-                        </group>
-                    </group>
-
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="justify-content-center d-flex">
+                                    <ul role="tablist" class="nav mt-4 o_tab_nav nav-tabs justify-content-center">
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link active" id="overview-tab" data-bs-toggle="pill" href="#basic_information" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">BASIC INFORMATION</span>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="setup-tab" data-bs-toggle="pill" href="#client_classification" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">CLIENT &amp; CLASSIFICATION</span>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="demo-tab" data-bs-toggle="pill" href="#headcount_vacancy" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">HEADCOUNT &amp; VACANCY</span>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="faqs-tab" data-bs-toggle="pill" href="#salary_range" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">SALARY RANGE</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                        <!-- TAB CONTENT -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content mt-4">
+                    
+                                    <!-- BASIC INFORMATION -->
+                                    <div class="tab-pane fade show active" id="basic_information" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="department"/>
+                                                <field name="requisition_location"/>
+                                                <field name="hiring_manager"/>
+                                                <field name="requisition_owner"/>
+                                                <field name="reason"/>
+                                                <field name="employment_type"/>
+                                            </group>
+                                            <group>
+                                                <field name="experience"/>
+                                                <field name="plan_date"/>
+                                                <field name="created_on"/>
+                                                <field name="sourcing_date"/>
+                                                <field name="calibration_date"/>
+                                                <field name="target_start_date"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                    
+                                    <!-- Client Classification -->
+                                    <div class="tab-pane fade" id="client_classification" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="company"/>
+                                                <field name="client_business_category"/>
+                                                <field name="career_level"/>
+                                                <field name="client_classification"/>
+                                                <field name="job_classification"/>
+                                                <field name="position_classification"/>
+                                            </group>
+                                            <group>
+                                                <field name="industry"/>
+                                                <field name="client_website" widget="url"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                    
+                                    <!-- Headcount & Vacancy -->
+                                    <div class="tab-pane fade" id="headcount_vacancy" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="headcount_demand"/>
+                                                <field name="headcount"/>
+                                                <field name="remaining_vacancy"/>
+                                            </group>
+                                            <group>
+                                                <field name="requisition_age"/>
+                                                <field name="candidate"/>
+                                                <field name="approved_by"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                    
+                                    <!-- Salary Range -->
+                                    <div class="tab-pane fade" id="salary_range" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="salary_from"/>
+                                                <field name="salary_to"/>
+                                            </group>
+                                            <group>
+                                                <field name="salary_currency"/>
+                                                <field name="salary_frequency"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="justify-content-center d-flex">
+                                    <ul role="tablist" class="nav mt-4 o_tab_nav nav-tabs justify-content-center">
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="releases-tab" data-bs-toggle="pill" href="#salary_package_compensation" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">SALARY PACKAGE &amp; COMPENSATION</span>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="releases-tab" data-bs-toggle="pill" href="#internal_contacts" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">INTERNAL CONTACTS</span>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="nav-item mx-2">
+                                            <a class="nav-link" id="releases-tab" data-bs-toggle="pill" href="#client_hiring_manager_contacts" role="tab">
+                                                <span style="font-size:18px; font-weight:600;">CLIENT HIRING MANAGER CONTACTS</span>
+                                            </a>
+                                        </li>
+                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                        <!-- TAB CONTENT -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content mt-4">
+                    
+                                    <!-- salary Package & Compentation -->
+                                    <div class="tab-pane fade show active" id="salary_package_compensation" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="salary_package"/>
+                                                <field name="salary_package_currency"/>
+                                                <field name="salary_package_frequency"/>
+                                                <field name="allowances"/>
+                                                <field name="bonuses"/>
+                                            </group>
+                                            <group>
+                                                <field name="incentives"/>
+                                                <field name="life_insurance"/>
+                                                <field name="night_differential"/>
+                                            </group>
+                                            <group colspan="2">
+                                                <field name="salary_package_remarks" placeholder="Additional notes on the salary package..." colspan="2"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                    
+                                    <!-- Internal Contacts -->
+                                    <div class="tab-pane fade" id="internal_contacts" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="department_head"/>
+                                                <field name="requestor"/>
+                                                <field name="sales_lead"/>
+                                            </group>
+                                            <group>
+                                                <field name="secondary_hiring_manager_poc"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                    
+                                    <!-- Client Hiring Manager Contacts -->
+                                    <div class="tab-pane fade" id="client_hiring_manager_contacts" role="tabpanel">
+                                        <group>
+                                            <group>
+                                                <field name="hiring_manager_client"/>
+                                                <field name="hiring_manager_email_client" widget="email"/>
+                                            </group>
+                                            <group>
+                                                <field name="hiring_manager_client_2"/>
+                                                <field name="hiring_manager_email_client_2" widget="email"/>
+                                            </group>
+                                            <group>
+                                                <field name="hiring_manager_client_3"/>
+                                                <field name="hiring_manager_email_client_3" widget="email"/>
+                                            </group>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Attachments -->
                     <group string="Attachments">
                         <group>
-                            <field name="job_description"
-                                widget="binary"/>
+                            <field name="job_description" widget="binary"/>
                         </group>
                         <group>
-                            <field name="calibration_notes"
-                                widget="binary"/>
+                            <field name="calibration_notes" widget="binary"/>
                             <field name="calibration_notes_url" widget="url"/> 
                         </group>
                     </group>
-
+                    
                     <notebook>
                         <page string="Admin Fields" groups="base.group_system">
                             <group>

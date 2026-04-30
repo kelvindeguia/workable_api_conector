@@ -52,3 +52,4 @@ class WorkableEmployee(models.Model):
     overtime_note = fields.Text(string='Overtime Note', store=True)
 
     workable_employee_id = fields.Char(string='Workable Employee ID', store=True)
+
