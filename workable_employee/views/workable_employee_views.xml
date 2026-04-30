@@ -14,14 +14,14 @@
         <field name="name">workable.employees.list</field>
         <field name="model">workable.employees</field>
         <field name="arch" type="xml">
-            <list string="Employees" js_class="workable_list">
+            <list string="Employees" js_class="workable_list" multi_edit="1">
                 <field name="employee_id"/>
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="preferred_name"/>
                 <field name="job_title"/>
                 <field name="department"/>
-                <field name="state"/>
+                <field name="state" widget="badge" decoration-success="state == 'active'" decoration-danger="state == 'inactive'" decoration-info="state == 'draft'" decoration-warning="state == 'published'"/>
                 <field name="work_email"/>
                 <field name="start_date"/>
             </list>
